@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+ 
+  <title>Zeiterfassung</title>
+</head>
+<body>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="#" class="brand-logo">
+            <h3 style="line-height: 0.2rem;">Logo</h3>
+          </a>
+          <!--<ul class="right">
+            <li>
+              <a href="#" class="clear-btn btn blue lighten-3">Löschen</a>
+            </li>
+          </ul>
+        -->
+        </div>
+      </div>
+    </nav>
+      <div class="hintergrund"></div>
+      <div class="container">
+        <h3 class="center zeiterfassung">Zeiterfassung</h3>
+        <div class="card">
+          <div class="card-content">
+            <span class=" card-title black-text text-darken-3 ">
+              Personaldaten
+            </span>
+            <form class="col">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="personalId">PersonalID<sup>*</sup> </label>
+                <input type="text" id="personalId" placeholder="PersonalID" required>
+              </div>
+              <div class="input-field col s12">
+                <label for="kostenstelle">Kostenstelle<sup>*</sup></label>
+                <input type="text" id="kostenstelle" placeholder="Kostenstelle" required>
+              </div>
+              <div class="input-field col s12">
+                <label for="projekt">Projekt<sup>*</sup></label>
+                <input type="text" id="projekt" placeholder="Projekt" required>
+              </div>
+              <div class="input-field col s12">
+                <label for="aufgabe">Aufgabe<sup>*</sup></label>
+                <input type="text" id="aufgabe" placeholder="Aufgabe" required>
+                
+              </div>
+              <div class="input-field col s12">
+                <label for="beschreibung">Beschreibung</label>
+                <textarea id="beschreibung" class="form-control"
+                placeholder="Beschreibung" rows="4" cols="4" style="margin-top: 10px;" required ></textarea>
+              </div>
+              <div class="input-field col s12">
+                <label for="datum">Datum<sup>*</sup></label>
+                <input type="date" id="datum" placeholder="Datum" required>
+              </div>
+              <div class="input-field col s12">
+                <label for="zeit">Zeit<sup>*</sup></label>
+                <input type="number" id="zeit" placeholder="Zeit" required>
+              </div>
+              <div class="input-field col s12">
+                <p class="fehlermeldung white-text red darken-1"></p>
+              </div>
+              <div class="row">
+                  <div class="col l6 col s8">
+
+                    <button class="add-btn btn blue darken-3 center" style="margin-left: 4px; margin-top: 10px;"><i class="fa fa-plus"></i> Leistungsnachweis addieren</button>
+                  </div>
+
+                  <div class="col l6 col s8">
+
+                    <button class="clear-btn btn red center" style="margin-top: 10px;"><i class="fas fa-minus"></i> Leistungsnachweise löschen</button>
+                  </div>
+                
+            </div>
+            </div>
+          </form>
+          </div>
+        </div>
+      <h3 class="center text-darken-3 total">Total Stunden: <span class="total-stunden">0</span></h3>
+      
+      <ul id="item-list" class="collection">
+      </ul>
+
+      <br>
+
+      <label for="datumFilter" class="form-label ">Filter</label>
+      <input class="form-control" list="datumList"  id="datumFilter" placeholder="Wählen Sie ein Datum aus">  
+      <datalist id="datumList">
+      </datalist>
+
+      <button class="btn btn-success" id="filterBtn" >Aktualisieren</button>
+    </div>
+    
+
+    <div class="container mt-20">
+      <div class="row">
+        <div class="col l6 col s10">
+      
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="col l6 col s10">
+          <canvas id="myChart2"></canvas>
+          
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="ItemCtrl.js"></script>
+    <script src="UICtrl.js"></script>
+    <script src="app.js"></script>
+</body>
+<footer>
+  Logo GmbH &copy;
+</footer>
+</html>
